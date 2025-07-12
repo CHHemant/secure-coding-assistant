@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Coding Assistant</title>
+</head>
+<body>
+    <h1>Secure Coding AI Bot</h1>
+    <form method="post">
+        <textarea name="code" rows="10" cols="80" placeholder="Paste your code here..."></textarea><br>
+        <input type="submit" value="Analyze">
+    </form>
+    {% if findings %}
+        <h2>Static Analysis Findings:</h2>
+        <ul>
+        {% for finding in findings %}
+            <li>{{ finding }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% if suggestions %}
+        <h2>AI Suggestions:</h2>
+        <pre>{{ suggestions }}</pre>
+    {% endif %}
+</body>
+</html>
